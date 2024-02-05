@@ -1,3 +1,70 @@
-.dark-mode{
- filter: grayscale(1)
+body,
+html {
+ margin: 0;
+ padding: 0;
+ height: 100%;
+}
+
+.container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+.dark-mode {
+ background-color: black;
+ color: white;
+}
+
+.dark-text {
+ color: white;
+}
+
+.content {
+ text-align: center;
+}
+
+.toggle-switch {
+ display: flex;
+ align-items: center;
+ margin-top: 20px;
+}
+
+.toggle-switch input {
+ margin-right: 10px;
+}
+
+.toggle-switch input[type="checkbox"] {
+ appearance: none;
+ width: 40px;
+ height: 20px;
+ background-color: #ccc;
+ border-radius: 10px;
+ position: relative;
+ cursor: pointer;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input[type="checkbox"]:checked {
+ background-color: #555;
+}
+
+.toggle-switch input[type="checkbox"]:before {
+ content: '';
+ position: absolute;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ background-color: #fff;
+ left: 0;
+ transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-switch.dark-mode input[type="checkbox"]:before {
+ background-color: #000;
+}
+
+.toggle-switch input[type="checkbox"]:checked:before {
+ transform: translateX(20px);
 }

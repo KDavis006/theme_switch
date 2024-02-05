@@ -1,18 +1,27 @@
-import React from 'react';
-import DarkModeSwitch from './Components/DarkModeSwitch';
 import { ThemeSwitcher } from './Components/ThemeSwitcher';
 import { useTheme } from './Components/ThemeSwitcher';
 
 const App = () => {
+  return (
+    <ThemeSwitcher>
+      <AppContent />
+    </ThemeSwitcher>
+  );
+};
+
+const AppContent = () => {
   const { darkMode, toggleDarkMode } = useTheme();
 
   return (
-    <ThemeSwitcher className={`${darkMode ? 'dark-mode' : ''}`}>
-      <div>
-        <h1>Your App</h1>
-        <DarkModeSwitch />
+    <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
+      <div className="content">
+        <h1 className={darkMode ? 'dark-text' : ''}>Your App</h1>
+        <label className="toggle-switch">
+          <input type="checkbox" checked={darkMode} onChange={toggleDarkMode} />
+          Dark Mode
+        </label>
       </div>
-    </ThemeSwitcher>
+    </div>
   );
 };
 

@@ -17,5 +17,7 @@ export const ThemeSwitcher = ({ children }) => {
 };
 
 export const useTheme = () => {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+
+  return context;
 };
